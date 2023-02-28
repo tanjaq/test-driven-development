@@ -16,10 +16,13 @@ To solve the task, proceed as follows:
 **Username**
 
 Username can be 6-30 characters long.
+
 Username can contain letters, numbers, and periods. 
 
 **Password**
 
 Password has to be at least 8 characters long.
+
 Password should contain at least one lowercase and one uppercase letter.
+
 Password should contain at least one number. 
