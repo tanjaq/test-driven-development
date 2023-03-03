@@ -6,6 +6,12 @@ test("return false for empty password", () => {
 test("return false for password < 8 characters", () => {
     expect(validatePassword("a123")).toBe(false)
 })
+test("return false for password = 7 characters", () => {
+    expect(validatePassword("QA12ws4")).toBe(false)
+})
+test("return true for password = 8 characters", () => {
+    expect(validatePassword("QWE123as")).toBe(true)
+})
 test("return true for password => 8 characters", () => {
     expect(validatePassword("QWERTYas34")).toBe(true)
 })
