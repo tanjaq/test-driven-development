@@ -32,3 +32,4 @@ To solve the task, proceed as follows:
 - Password has to be at least 8 characters long.
 - Password should contain at least one lowercase and one uppercase letter.
 - Password should contain at least one number. 
+- Password should not contain any special characters.  

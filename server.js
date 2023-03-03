@@ -1,5 +1,6 @@
 const express = require('express')
 const cors = require('cors')
+const validatePassword = require('./validatePassword')
 
 const app = express()
 
@@ -12,7 +13,7 @@ app.post('/users', (req, res) => {
   const { username, password } = req.body
 
   const validUsername = true
-  const validPassword = true
+  const validPassword = validatePassword(password)
 
   if (validUsername && validPassword) {
     res.send({message: "Valid User"})
