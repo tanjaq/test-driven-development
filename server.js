@@ -11,7 +11,7 @@ app.use(express.static(__dirname + '/public'));
 app.post('/users', (req, res) => {
   const { username, password } = req.body
 
-  const validUsername = true
+  const validUsername = validName(username);
   const validPassword = validPass(password);
 
   if (validUsername && validPassword) {
