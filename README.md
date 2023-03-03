@@ -25,7 +25,7 @@ To solve the task, proceed as follows:
 **Username**
 
 - Username can be 6-30 characters long.
-- Username can contain letters, numbers, and periods. 
+- Username can only contain letters, numbers, and periods. 
 
 **Password**
 
