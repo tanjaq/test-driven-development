@@ -1,10 +1,14 @@
-function validPassword(password) {
-    const validLength = password.length >= 8
-    let hasNumber = /[0-9]/g.test(password)
-    let hasUpperCaseLetters = /[A-Z]/g.test(password)
-    let hasLowerCaseLetters = /[a-z]/g.test(password)
-    let hasSpecialCharacters = /[\W]/g.test(password)
+function validatePassword(password){
+    const validLength = password.length >= 8;
+    let hasNumber = /[0-9]/g.test(password);
+    let hasUpperCase = /[A-Z]/g.test(password); 
+    let hasLowerCase = /[a-z]/g.test(password); 
+    var hasSpecialCharacter = /[^\w\s]/g.test(password); // exclude special characters
 
-    return validLength && hasNumber && hasLowerCaseLetters && hasUpperCaseLetters && !hasSpecialCharacters
-}
-module.exports = validPassword
+    if (hasSpecialCharacter) {
+        return false;
+    }
+    return validLength && hasNumber && hasUpperCase && hasLowerCase;
+};
+
+module.exports = validatePassword;
