@@ -28,5 +28,8 @@ test("return false for password => 8 characters, no letters", () => {
     expect(validatePassword("657657657")).toBe(false)
 })
 test("return false for password with special characters", () => {
-    expect(validatePassword("asdq&*()123")).toBe(false)
+    expect(validatePassword("asdQW&*()123")).toBe(false)
+})
+test("return false for password with special characters and underscore", () => {
+    expect(validatePassword("asdq_QW$%^12")).toBe(false)
 })

@@ -3,7 +3,8 @@ function validPassword(password) {
     let hasNumber = /[0-9]/g.test(password)
     let hasUpperCaseLetters = /[A-Z]/g.test(password)
     let hasLowerCaseLetters = /[a-z]/g.test(password)
+    let hasSpecialCharacters = /[\W]/g.test(password)
 
-    return validLength && hasNumber && hasLowerCaseLetters && hasUpperCaseLetters
+    return validLength && hasNumber && hasLowerCaseLetters && hasUpperCaseLetters && !hasSpecialCharacters
 }
 module.exports = validPassword
