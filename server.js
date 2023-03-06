@@ -1,6 +1,7 @@
 const express = require('express')
 const cors = require('cors')
 const validPass = require('./validating/validPass.js');
+const validName = require('./validating/validName.js');
 const app = express()
 
 app.use(express.json())

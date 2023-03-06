@@ -8,6 +8,11 @@ test("return false if name < 6 chars", () => {
     expect(validPass("rgre")).toBe(false);
 });
 
+
+test("return true on right name", () => {
+    expect(validPass("rgr123eFF")).toBe(true);
+});
+
 test("return false if name > 30 chars", () => {
     expect(validPass("fndigirofmbnfjgoekgjreigmejgijeigoejgioelfjfo")).toBe(false);
 });
