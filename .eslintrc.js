@@ -5,12 +5,13 @@ module.exports = {
   },
   'extends': 'google',
   'overrides': [
-    
+
   ],
   'parserOptions': {
     'ecmaVersion': 'latest',
     'sourceType': 'module',
   },
   'rules': {
+    "linebreak-style": 0
   },
 };
