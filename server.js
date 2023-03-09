@@ -1,6 +1,7 @@
 const express = require('express')
 const cors = require('cors')
-const validatePassword = require('./validatePassword')
+const validateUsername = require('./validation/validateUsername')
+const validatePassword = require('./validation/validatePassword')
 
 const app = express()
 
@@ -12,7 +13,7 @@ app.use(express.static(__dirname + '/public'));
 app.post('/users', (req, res) => {
   const { username, password } = req.body
 
-  const validUsername = true
+  const validUsername = validateUsername(username)
   const validPassword = validatePassword(password)
 
   if (validUsername && validPassword) {
