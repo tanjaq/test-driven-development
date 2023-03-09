@@ -1,4 +1,4 @@
-function validPassword(password) {
+function validatePassword(password) {
   const validLength = password.length >= 8;
   const hasNumber = /[0-9]/g.test(password);
   const hasUpperCaseLetters = /[A-Z]/g.test(password);
@@ -7,4 +7,4 @@ function validPassword(password) {
 
   return validLength && hasNumber && hasLowerCaseLetters && hasUpperCaseLetters && !hasSpecialCharacters;
 }
-module.exports = validPassword;
+module.exports = validatePassword;
