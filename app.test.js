@@ -36,4 +36,5 @@ describe('given incorrect or missing username and password', () => {
     // test missing username
     // test missing password
     // test missing username and password
+    // test username and password values as nulls
 })

@@ -28,7 +28,7 @@ describe('given correct username and password', () => {
     // add more tests here
 })
 
-describe('given incorrect correct username and password', () => {
+describe('given incorrect username and password', () => {
     test('return status 400 for incorrect password', async () => {
         const response = await request(app).post('/users').send({
             username: 'Username',
