@@ -20,6 +20,11 @@ To solve the task, proceed as follows:
 9. Grade (1p) is awarded to students:
    - who made the pull request with finished tests and validation code
 
+Jest documentation:
+https://jestjs.io/docs/expect
+https://jestjs.io/docs/mock-function-api
+
+
 ## Business requirements
 
 **Username**
