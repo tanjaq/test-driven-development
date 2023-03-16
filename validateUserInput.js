@@ -1,3 +1,4 @@
+// actual function for validateUserInput
 function validateUserInput(username)
 {
     const validUserLength = username.length >= 6 && username.length <= 30

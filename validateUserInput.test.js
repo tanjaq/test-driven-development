@@ -1,3 +1,4 @@
+// all validation test => business requerements for user input
 const validateUserInput = require('./validateUserInput');
 
 test('validateUserInput returns false for empty username', () => {
