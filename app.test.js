@@ -19,8 +19,13 @@ describe('given correct username and password', () => {
         })
         expect(response.body.userId).toBeDefined()
     })
-    // test response content type?? 
-    // test response message
+    test('return correct message', async () => {
+        const response = await request(app).post('/users').send({
+            username: 'Username',
+            password: 'Password123'
+        })
+        expect(response.body.message).toBe('Valid User')
+    })
 })
 
 describe('given incorrect or missing username and password', () => {
@@ -31,10 +36,32 @@ describe('given incorrect or missing username and password', () => {
         })
         expect(response.statusCode).toBe(400)
     })
-    // test response does NOT contain userId
-    // test response message
-    // test missing username
-    // test missing password
-    // test missing username and password
-    // test username and password values as nulls
+    test('dont contain userId', async () => {
+        const response = await request(app).post('/users').send({
+            username: 'name',
+            password: 'pass'
+        })
+        expect(response.body.userId).not.toBeDefined()
+    })
+    test('missing username', async () => {
+        const response = await request(app).post('/users').send({
+            username: '',
+            password: 'Password123'
+        })
+        expect(response.statusCode).toBe(400)
+    })
+    test('missing password', async () => {
+        const response = await request(app).post('/users').send({
+            username: 'Username',
+            password: ''
+        })
+        expect(response.statusCode).toBe(400)
+    })
+    test('missing username and password', async () => {
+        const response = await request(app).post('/users').send({
+            username: '',
+            password: ''
+        })
+        expect(response.statusCode).toBe(400)
+    })
 })
