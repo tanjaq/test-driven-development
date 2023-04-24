@@ -1,7 +1,6 @@
-function createApp(validatePassword) {
+function createApp(validatePassword, validateUsername) {
     const express = require('express')
     const cors = require('cors')
-    const validateUsername = require('./validation/validateUsername')
     
     const app = express()
     
