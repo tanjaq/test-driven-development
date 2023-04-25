@@ -26,6 +26,24 @@ describe('given correct username and password', () => {
         expect(response.body.userId).toBeDefined()
     })
     // add more tests here
+    test('return response content type', async () => {
+        const response = await request(app).post('/users').send({
+            username: 'Username',
+            password: 'Password123'
+        })
+        expect(response.headers["content-type"]).toBe("application/json; charset=utf-8");
+        expect(mockPasswordValidation).toHaveBeenCalled();
+        expect(mockPasswordValidation).toHaveReturnedWith(true);
+    })
+    test('return response message', async () => {
+        const response = await request(app).post('/users').send({
+            username: 'Username',
+            password: 'Password123'
+        })
+        expect(response.body.message).toBe('Valid User')
+        expect(mockPasswordValidation).toHaveBeenCalled();
+        expect(mockPasswordValidation).toHaveReturnedWith(true);
+    })
 })
 
 describe('given incorrect username and password', () => {
